@@ -1,0 +1,8 @@
+*.o
+/bin
+node_modules/
+/.settings/
+.idea/
+.deps
+coverage/
+package-lock.json
