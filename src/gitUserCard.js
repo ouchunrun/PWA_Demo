@@ -101,7 +101,6 @@ if("serviceWorker" in navigator && navigator.serviceWorker){
             console.error("Service Worker registration failed : ", error);
         })
 
-
     navigator.serviceWorker.addEventListener("message", function(event) {
         console.log('serviceWorker onmessage:\n', event.data);
     })

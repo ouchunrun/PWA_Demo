@@ -1,7 +1,7 @@
 {
   "name": "一个PWA示例",
   "short_name": "PWA示例",
-  "start_url": "/PWA_Demo/",
+  "start_url": "https://meetings.ipvideotalk.com/rtc/dispatch",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#3eaf7c",
