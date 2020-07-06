@@ -13,6 +13,7 @@ function fetchGitUserInfo(username, requestFromBGSync) {
     let url = 'https://api.github.com/users/' + name;
     spinnerElement.classList.add('show'); //show spinner
 
+    console.log('Fetch URL: ', url)
     fetch(url, { method: 'GET' })
         .then(function(fetchResponse){ return fetchResponse.json() })
         .then(function(response) {
@@ -85,13 +86,28 @@ document.onkeydown=function(e) {
 }
 
 /**
- *  检测浏览器是否支持serviceWorker
+ *  注册service worker
  */
-if(navigator.serviceWorker != null){
-    navigator.serviceWorker.register('serviceWorker.js')
+if("serviceWorker" in navigator && navigator.serviceWorker){
+    navigator.serviceWorker.register('/serviceWorker.js')
         .then(function(serviceWorker){
-         console.log('Service Worker registered: :',serviceWorker .scope)
+            console.log('Service Worker registration was successful: ',serviceWorker .scope)
+
+            //  页面向 service worker 发送一条消息
+            if ("serviceWorker" in navigator && navigator.serviceWorker.controller) {
+                navigator.serviceWorker.controller.postMessage("cache-current-page");
+            }
         }).catch(function (error) {
-            console.error("Error registering the Service Worker: ", error);
+            console.error("Service Worker registration failed : ", error);
         })
+
+
+    navigator.serviceWorker.addEventListener("message", function(event) {
+        console.log('serviceWorker onmessage:\n', event.data);
+    })
+}
+
+if('caches' in window) {
+    // Has support!
+    console.log('caches has support !')
 }
