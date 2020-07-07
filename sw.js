@@ -1,4 +1,4 @@
-let CACHE_NAME = 'Foxes-site-cache-v1'
+let CACHE_NAME = 'Foxes-git-cache-v2'
 let urlsToCache = [
     './',
     './index.html',
