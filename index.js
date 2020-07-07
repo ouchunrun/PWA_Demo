@@ -8,7 +8,7 @@ function randomValueFromArray(array) {
 
 setInterval(function() {
   let randomChoice = randomValueFromArray(images);
-  imgElem.src = 'images/' + randomChoice + '.jpg';
+  imgElem.src = './images/' + randomChoice + '.jpg';
 }, 2000)
 
 // Register service worker to control making site work offline

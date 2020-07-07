@@ -5,14 +5,13 @@ self.addEventListener('install', function (e) {
         caches.open('fox-store').then(function (cache) {
             console.log('Opened cache');
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/index.js',
-                '/style.css',
-                '/images/fox1.jpg',
-                '/images/fox2.jpg',
-                '/images/fox3.jpg',
-                '/images/fox4.jpg'
+                './index.html',
+                './index.js',
+                './style.css',
+                './images/fox1.jpg',
+                './images/fox2.jpg',
+                './images/fox3.jpg',
+                './images/fox4.jpg'
             ]);
         })
     );
