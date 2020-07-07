@@ -14,7 +14,7 @@ setInterval(function() {
 // Register service worker to control making site work offline
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/sw.js', {scope: '/'})
+        navigator.serviceWorker.register('./sw.js', {scope: '/'})
             .then(function (registration) {
                 // 注册成功
                 console.warn('ServiceWorker registration successful with scope: ', registration.scope)

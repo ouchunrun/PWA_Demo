@@ -51,7 +51,7 @@ self.addEventListener('activate', function (e) {
         // 遍历当前scope使用的key值
         return Promise.all(keys.map(function (key) {
             // 如果新获取到的key和之前缓存的key不一致，就删除之前版本的缓存
-            if (key !== cacheName) {
+            if (key !== CACHE_NAME) {
                 return caches.delete(key)
             }
         }))
