@@ -18,7 +18,7 @@ self.addEventListener('install',e =>{
             console.log('Opened cache');
             // 如果所有的文件都成功缓存了，便会安装完成。如果任何文件下载失败了，那么安装过程也会随之失败。
             cache.addAll(urlsToCache)
-        }).then(function (clients) {
+        }).then(function () {
             // // install 阶段跳过等待
             self.skipWaiting()
         })
@@ -69,7 +69,7 @@ self.addEventListener('fetch',function(event){
         caches.match(event.request).then(function(response){
             console.log("Fetch event request: ", event.request.url)
             if(response){
-                return response
+                return response || fetch(e.request);
             }
 
             // IMPORTANT: Clone the request. A request is a stream and
@@ -84,7 +84,7 @@ self.addEventListener('fetch',function(event){
                     // 确保 response 的类型是 basic 类型的，这说明请求是同源的，这意味着第三方的请求不能被缓存。
                     console.log(response)
                     if(!response || response.status !== 200 || response.type !== 'basic') {
-                        return response;
+                        return response || fetch(e.request);;
                     }
 
                     // IMPORTANT: Clone the response. A response is a stream
@@ -98,7 +98,7 @@ self.addEventListener('fetch',function(event){
                             cache.put(event.request, responseToCache);
                         });
 
-                    return response;
+                    return response || fetch(e.request);
                 }
             );
         })

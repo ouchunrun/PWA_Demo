@@ -1,5 +1,6 @@
 
 
+
 ## 页面窗口向 service worker 通信
 
  页面向service worker 发送了一条简单对象的消息：
@@ -20,6 +21,23 @@ self.addEventListener("message", function(event) {
 ```
 
 
+## Issue
+
+1、如何提示用户可以安装您的PWA 应用或PWA安装后删除，为什么不在提示问题？
+
+- In Chrome, your Progressive Web App must meet the following criteria before it will fire the beforeinstallprompt event and show the in-browser install promotion:
+    - The web app is `not already installed`
+    - Meets a user engagement heuristic
+    - Be served `over HTTPS`
+    - Includes a Web App `Manifest` that includes:
+    - `short_name or name`
+    - icons - must include a `192px and a 512px `icon
+    - `start_url`
+    - display - must be one of `fullscreen, standalone, or minimal-ui`
+    - Note: prefer_related_applications must not be present, or be false
+    - Registers a service worker with a functional fetch handler
+
+
 ## 流程
 
 - caches 流程
@@ -30,8 +48,6 @@ self.addEventListener("message", function(event) {
 
 - SW.js 的更新
 ![SW.js 的更新](http://static.zybuluo.com/jimmythr/yrc93yy5ygxmekeoypgtjyqw/image_1baf37lcr1ho41vj91jb01fdu1in9.png)
-
-
 
 
 ----
