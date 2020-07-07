@@ -8,14 +8,25 @@ function randomValueFromArray(array) {
 
 setInterval(function() {
   let randomChoice = randomValueFromArray(images);
-  imgElem.src = './images/' + randomChoice + '.jpg';
+  imgElem.src = 'images/' + randomChoice + '.jpg';
 }, 2000)
 
 // Register service worker to control making site work offline
-
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js').then(function() { console.log('Service Worker Registered'); });
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js', {scope: '/'})
+            .then(function (registration) {
+                // 注册成功
+                console.warn('ServiceWorker registration successful with scope: ', registration.scope)
+            })
+            .catch(function (err) {
+                // 注册失败:(
+                console.error('ServiceWorker registration failed: ', err)
+            })
+    })
 }
+
+
 
 // Code to handle install prompt on desktop
 
@@ -34,6 +45,9 @@ console.warn("before install prompt")
 });
 
 function showInstallPromotion(){
+    if( !deferredPrompt ) {
+        return;
+    }
     console.warn("show install promotion...")
     addBtn.style.display = 'block';
     addBtn.addEventListener('click', (e) => {
@@ -44,11 +58,15 @@ function showInstallPromotion(){
         // Wait for the user to respond to the prompt
         deferredPrompt.userChoice.then((choiceResult) => {
             if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted the A2HS prompt');
+                alert('用户已同意添加到桌面');
             } else {
-                console.log('User dismissed the A2HS prompt');
+                alert('用户已取消添加到桌面');
             }
             deferredPrompt = null;
         });
     });
 }
+
+window.addEventListener('appinstalled', (evt) => {
+    alert('已安装到桌面屏幕');
+});
