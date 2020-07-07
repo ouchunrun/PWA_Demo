@@ -1,13 +1,13 @@
 let CACHE_NAME = 'Foxes-site-cache-v1'
 let urlsToCache = [
-    '/',
-    '/index.html',
-    '/index.js',
-    '/style.css',
-    '/images/fox1.jpg',
-    '/images/fox2.jpg',
-    '/images/fox3.jpg',
-    '/images/fox4.jpg'
+    './',
+    './index.html',
+    './index.js',
+    './style.css',
+    './images/fox1.jpg',
+    './images/fox2.jpg',
+    './images/fox3.jpg',
+    './images/fox4.jpg'
 ]
 
 self.addEventListener('install', function (e) {

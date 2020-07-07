@@ -59,9 +59,8 @@ self.addEventListener("message", function(event) {
 
 - [Service Worker 全面进阶](https://www.villainhr.com/page/2017/01/08/Service%20Worker%20%E5%85%A8%E9%9D%A2%E8%BF%9B%E9%98%B6)
 
-
-
-
+- [添加到主屏幕的快捷提示方式](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps/%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%B8%BB%E5%B1%8F%E5%B9%95)
+   
 
 
 
