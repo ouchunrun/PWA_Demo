@@ -5,6 +5,7 @@ self.addEventListener('install', function (e) {
         caches.open('fox-store').then(function (cache) {
             console.log('Opened cache');
             return cache.addAll([
+                './',
                 './index.html',
                 './index.js',
                 './style.css',
