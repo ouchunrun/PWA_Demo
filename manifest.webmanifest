@@ -3,11 +3,6 @@
   "description": "Shows random fox pictures. Hey, at least it isn't cats.",
   "display": "standalone",
   "icons": [
-   {
-        "src": "icon/ouou.jpg",
-        "sizes": "512x512",
-        "type": "image/jpg"
-      },
     {
       "src": "icon/fox-icon.png",
       "sizes": "192x192",
