@@ -4,8 +4,8 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "icon/fox-icon.png",
-      "sizes": "192x192",
+      "src": "icon/like-152x152.png",
+      "sizes": "152x152",
       "type": "image/png"
     }
   ],
