@@ -12,11 +12,12 @@ self.addEventListener('install', function (e) {
                 "./icon/fox-icon.png",
                 "./icon/like-152x152.png",
                 "./icon/like-512x512.png",
-                "./video/玩具总动员.mp4",
+                "./video/wanjuzongdongyuan.mp4",
                 './images/fox1.jpg',
                 './images/fox2.jpg',
                 './images/fox3.jpg',
-                './images/fox4.jpg'
+                './images/fox4.jpg',
+                './src/webSocket.js'
             ]);
         })
     );

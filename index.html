@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <link rel="icon" href="data:image/ico;base64,aWNv">
     <title>PWA demo</title>
@@ -12,21 +12,55 @@
     <link rel="shortcut icon" sizes="152x152" href="./icon/like-152x152.png">
     <link rel="shortcut icon" sizes="512x512" href="./icon/like-512x512.png">
     <link rel="manifest" href="manifest.webmanifest">
-  </head>
-  <body>
-    <button class="add-button"> + Add to home screen</button>
+</head>
+<body>
+<button class="add-button"> + Add to home screen</button>
 
-    <div>
-      <!--local video-->
-      <video id="local" controls autoplay src="./video/玩具总动员.mp4" muted></video>
+<div class="videoArea">
+    <!--local video-->
+    <video id="local" controls autoplay src="./video/wanjuzongdongyuan.mp4" muted></video>
+</div>
 
-      <!--online videos-->
-      <!--<video id="online" playsinline="" controls="" loop="" muted="">-->
-        <!--<source src="https://vfx.mtime.cn/Video/2019/03/18/mp4/190318231014076505.mp4" type="video/mp4">-->
-        <!--<source src="https://vfx.mtime.cn/Video/2019/03/19/mp4/190319222227698228.mp4" type="video/mp4">-->
-        <!--<source src="https://vfx.mtime.cn/Video/2019/03/21/mp4/190321153853126488.mp4" type="video/mp4">-->
-        <!--<p>This browser does not support the video element.</p>-->
-      <!--</video>-->
+<div class="main websocket" style="padding-top: 50px;">
+    <h2>websocket在线测试</h2>
+    <div class="link layui-form layui-form-pane">
+        <div class="layui-form-item set">
+            <label class="layui-form-label" style="clear: both;">protocols</label>
+            <div class="layui-input-inline">
+                <input type="text" name="websocketUrl" value="sip" id="protocols" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item set">
+            <label class="layui-form-label">ws或wss地址</label>
+            <div class="layui-input-inline">
+                <input type="text" name="websocketUrl" value="wss://xmeetings.ipvideotalk.com:443/ws" id="wsAddr" class="layui-input">
+            </div>
+            <div class="layui-btn-container">
+                <button class="layui-btn" id="link" onclick="addWebSocket()">连接</button>
+                <button class="layui-btn layui-btn-danger" id="close" onclick="closeWebSocket()">断开</button>
+            </div>
+        </div>
+
+        <div class="layui-form-text" id="send">
+            <label class="layui-form-label">下面输入您要发送的信息</label>
+            <div class="layui-input-block">
+                <textarea name="desc" placeholder="这里输入您要发送的信息" class="layui-textarea"></textarea>
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-normal layui-btn-fluid send" onclick="sendInputMessage()">发送信息</button>
+            </div>
+        </div>
+
+        <div class="layui-form-text" id="getMsg">
+            <label class="layui-form-label">信息接收窗口</label>
+            <blockquote class="layui-elem-quote layui-quote-nm" id="showMessage"></blockquote>
+            <div id="output" class="messageShow"></div>
+        </div>
     </div>
-  </body>
+</div>
+
+<script src="./src/reconnecting-websocket.min.js"></script>
+<script src="./src/webSocket.js"></script>
+</body>
 </html>
