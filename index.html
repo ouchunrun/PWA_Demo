@@ -7,17 +7,26 @@
     <link href="style.css" rel="stylesheet">
     <script src="index.js" defer></script>
 
-    <!--start for safari-->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="WECIRCLE">
-    <link rel="apple-touch-icon" sizes="192x192" href="./icon/fox-icon.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="./icon/like-152x152.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="./icon/like-512x512.png" />
-    <!--end for safari-->
+    <meta name="apple-mobile-web-app-title" content="PWA test">
+    <link rel="shortcut icon" sizes="152x152" href="./icon/like-152x152.png">
+    <link rel="shortcut icon" sizes="512x512" href="./icon/like-512x512.png">
     <link rel="manifest" href="manifest.webmanifest">
   </head>
   <body>
-    <img src="images/fox1.jpg" alt="a fox picture">
-    <button class="add-button">Add to home screen</button>
+    <button class="add-button"> + Add to home screen</button>
+
+    <div>
+      <!--local video-->
+      <video id="local" controls autoplay src="./video/玩具总动员.mp4" muted></video>
+
+      <!--online videos-->
+      <!--<video id="online" playsinline="" controls="" loop="" muted="">-->
+        <!--<source src="https://vfx.mtime.cn/Video/2019/03/18/mp4/190318231014076505.mp4" type="video/mp4">-->
+        <!--<source src="https://vfx.mtime.cn/Video/2019/03/19/mp4/190319222227698228.mp4" type="video/mp4">-->
+        <!--<source src="https://vfx.mtime.cn/Video/2019/03/21/mp4/190321153853126488.mp4" type="video/mp4">-->
+        <!--<p>This browser does not support the video element.</p>-->
+      <!--</video>-->
+    </div>
   </body>
 </html>

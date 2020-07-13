@@ -20,7 +20,7 @@ img {
   height: 50px;
   width: 100%;
   font-size: 20px;
-  background: #FFC107;
+  background: #03A9F4;
   color: aliceblue;
 }
 
@@ -29,4 +29,14 @@ img {
     height: 100%;
     object-fit: cover;
   }
+}
+video{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
 }

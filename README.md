@@ -23,7 +23,7 @@ self.addEventListener("message", function(event) {
 
 ## Issue
 
-1、如何提示用户可以安装您的PWA 应用或PWA安装后删除，为什么不在提示问题？
+1、提示用户可以安装您的PWA 应用的必要条件
 
 - In Chrome, your Progressive Web App must meet the following criteria before it will fire the beforeinstallprompt event and show the in-browser install promotion:
     - The web app is `not already installed`
@@ -31,7 +31,7 @@ self.addEventListener("message", function(event) {
     - Be served `over HTTPS`
     - Includes a Web App `Manifest` that includes:
     - `short_name or name`
-    - icons - must include a `192px and a 512px `icon
+    - icons - must include a `192px and a 512px `icon   // jpg格式的icons无法显示！！ 
     - `start_url`
     - display - must be one of `fullscreen, standalone, or minimal-ui`
     - Note: prefer_related_applications must not be present, or be false
@@ -43,7 +43,6 @@ self.addEventListener("message", function(event) {
 - caches 流程
 
 ![caches 流程](http://static.zybuluo.com/jimmythr/4l1l6ak04w6ns971hadwn1ci/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-12-18%2011.04.14.png)
-
 
 
 - SW.js 的更新
