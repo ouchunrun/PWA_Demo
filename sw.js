@@ -6,8 +6,7 @@ self.addEventListener('install', function (e) {
             console.log('Opened cache');
             return cache.addAll([
                 './',
-                // './index.html',
-                './PWA_Demo/index.html',
+                './index.html',
                 './index.js',
                 './style.css',
                 "./icon/fox-icon.png",
