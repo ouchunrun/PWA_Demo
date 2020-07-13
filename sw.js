@@ -17,6 +17,8 @@ self.addEventListener('install', function (e) {
                 './images/fox2.jpg',
                 './images/fox3.jpg',
                 './images/fox4.jpg',
+                './src/jquery.min.js',
+                './src/db.js',
                 './src/webSocket.js'
             ]);
         })
