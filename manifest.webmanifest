@@ -14,7 +14,7 @@
       "type": "image/png"
     }
   ],
-  "name": "Awesome Chrou pictures",
-  "short_name": "Chrou",
+  "name": "PWA demo,
+  "short_name": "PWA",
   "start_url": "/PWA_Demo/index.html"
 }
