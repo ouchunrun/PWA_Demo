@@ -7,6 +7,11 @@
       "src": "icon/like-152x152.png",
       "sizes": "152x152",
       "type": "image/png"
+    },
+    {
+      "src": "icon/like-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "name": "Awesome Chrou pictures",

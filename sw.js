@@ -12,7 +12,7 @@ self.addEventListener('install', function (e) {
                 "./icon/fox-icon.png",
                 "./icon/like-152x152.png",
                 "./icon/like-512x512.png",
-                "./video/wanjuzongdongyuan.mp4",
+                "./video/yewen4.mp4",
                 './images/fox1.jpg',
                 './images/fox2.jpg',
                 './images/fox3.jpg',
